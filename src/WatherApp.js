@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 import styles from './wather.module.css'
 
 const api = {
-    key: "96dca52fa3a85e5b88f4f82c33759ce3",
+    key: "ffec9baa4a35913c14ea905f0c61132f",
     base: "https://api.openweathermap.org/data/2.5/"
 }
 
@@ -23,7 +23,15 @@ function WatherApp() {
                     console.log(result);
                 })
                 .catch(error => {
-                    toast.error("data invalid")
+                    toast('🙄 Data Invalid!', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
                     console.log(error);
                     setQuery("")
                 })
